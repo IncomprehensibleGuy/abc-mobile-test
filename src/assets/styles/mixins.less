@@ -1,0 +1,5 @@
+// main: style.less
+
+.responsive(@min, @max) {
+  @prop: calc(@min*1px + (@max - @min) * ((100vw - @min-res*1px) / (@max-res - @min-res)));
+}

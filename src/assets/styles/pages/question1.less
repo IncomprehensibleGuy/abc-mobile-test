@@ -1,0 +1,129 @@
+// main: ../style.less
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.section__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.section-woman1 {
+  background-image: url(../images/blik.png);
+  background-repeat: no-repeat;
+  background-size: 100vw 1019px;
+  background-position: 0px -156px;
+  overflow: hidden;
+
+  .heading {
+    display: inline-block;
+    color: #fff;
+    opacity: .6;
+    font-weight: 300;
+
+    &-best {
+      height: 75px;
+      padding: 40px 0 0 0;
+      font-size: @f-m;
+      letter-spacing: .1em;
+    }
+    &-accuracy {
+      padding: 17px 0 0 0;
+      font-size: @f-xl;
+    }
+    &-question {
+      opacity: 1;
+      font-weight: 400;
+      font-size: @f-xl;
+      color: @c-primary;
+      margin: 0 0 23px 0;
+      line-height: 25px;
+    }
+    &-prediction {
+      font-size: @f-m;
+      letter-spacing: 0.1em;
+    }
+  }
+
+  .img-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 42px 0 0 0;
+    
+    .img {}
+
+    .icon {
+      width: 390px;
+      height: 390px;
+      opacity: .2;
+    }
+
+    .woman {
+      width: 390px * 0.6;
+      height: 390px * 0.6;
+      position: absolute;
+    }  
+  }
+
+  .btn-yes {}
+  .btn-no {}
+}
+.section-text {}
+.section-woman2 {}
+.section-question1 {}
+
+
+@media (max-width: calc(382px - 17px)) {
+  .section-woman1 {
+    background-size: 382px 402px;
+
+  }
+}
+
+@media (max-width: @max-res*1px) {
+  .section-woman1 {
+    background-size: max(382px, 100vw) .responsive(402, 1019)[@prop];
+    background-position-x: .responsive(-17, 0)[@prop];
+    background-position-y: .responsive(-7, -156)[@prop];
+
+    .heading {
+      &-best {
+        height: .responsive(35, 75)[@prop];
+        padding: .responsive(16.5, 40)[@prop] 0 0 0;
+        font-size: .responsive(12, 16)[@prop];
+      }
+      &-accuracy {
+        padding: .responsive(11, 17)[@prop] 0 0 0;
+        font-size: .responsive(20, 25)[@prop];
+      }
+      &-question {
+        font-size: .responsive(16, 25)[@prop];
+      }
+      &-prediction {
+        font-size: .responsive(12, 16)[@prop];
+      }
+    }
+
+    .img-block {
+      padding: .responsive(17, 42)[@prop] 0 0 0;
+
+      .icon {
+        width: .responsive(225, 390)[@prop];
+        height: .responsive(225, 390)[@prop];
+        opacity: .2;
+      }
+  
+      .woman {
+        position: absolute;
+        width: calc(.responsive(225, 390)[@prop] * 0.6);
+        height: calc(.responsive(225, 390)[@prop] * 0.6);
+      }  
+    }
+  }
+}
+
