@@ -12,11 +12,15 @@
 }
 
 .section-woman1 {
-  background-image: url(../images/blik.png);
-  background-repeat: no-repeat;
-  background-size: 100vw 1019px;
-  background-position: 0px -156px;
-  overflow: hidden;
+  .blick {
+    position: absolute;
+    width: 100vw;
+    height: 1019px;
+    object-fit: cover;
+    left: 0px;
+    top: -156px;
+    z-index: -1;
+  }
 
   .heading {
     display: inline-block;
@@ -39,7 +43,7 @@
       font-weight: 400;
       font-size: @f-xl;
       color: @c-primary;
-      margin: 0 0 23px 0;
+      margin: 0 0 60px 0;
       line-height: 25px;
     }
     &-prediction {
@@ -80,16 +84,19 @@
 
 @media (max-width: calc(382px - 17px)) {
   .section-woman1 {
-    background-size: 382px 402px;
-
+    .blick {
+      width: 382px;
+      left: .responsive(-17, 0)[@prop];
+    }
   }
 }
 
 @media (max-width: @max-res*1px) {
   .section-woman1 {
-    background-size: max(382px, 100vw) .responsive(402, 1019)[@prop];
-    background-position-x: .responsive(-17, 0)[@prop];
-    background-position-y: .responsive(-7, -156)[@prop];
+    .blick {
+      height: .responsive(402, 1019)[@prop];
+      top: .responsive(-7, -156)[@prop];
+    }
 
     .heading {
       &-best {
@@ -102,6 +109,7 @@
         font-size: .responsive(20, 25)[@prop];
       }
       &-question {
+        margin: 0 0 .responsive(23, 60)[@prop] 0;
         font-size: .responsive(16, 25)[@prop];
       }
       &-prediction {
@@ -119,7 +127,6 @@
       }
   
       .woman {
-        position: absolute;
         width: calc(.responsive(225, 390)[@prop] * 0.6);
         height: calc(.responsive(225, 390)[@prop] * 0.6);
       }  
@@ -127,3 +134,4 @@
   }
 }
 
+// todo: background image styles
