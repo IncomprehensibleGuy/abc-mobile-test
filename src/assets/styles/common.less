@@ -10,13 +10,13 @@ hr {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-// btns
-.btns-row {
+.col {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+// btns
 .btn {
   margin: 0 0 35px 0;
   width: 12.8em;
@@ -36,7 +36,7 @@ hr {
     top: 0;
     left: 0;
     background: linear-gradient(248.67deg, rgba(255, 255, 255, 0) 30.84%, rgba(255, 255, 255, 0.29) 46.06%, rgba(255, 255, 255, 0) 64.04%);
-    transform: translate(200%);
+    transform: translateX(200%);
     opacity: 0;
   }
 
@@ -50,10 +50,10 @@ hr {
 
 @keyframes btn-blick-move {
   from {
-    transform: translate(200%);
+    transform: translateX(200%);
   }
   to {
-    transform: translate(-100%);
+    transform: translateX(-100%);
   }
 }
 

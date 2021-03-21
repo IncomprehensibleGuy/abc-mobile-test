@@ -1,1 +1,50 @@
 // main: ../style.less
+
+.question3 {
+  .select-wrapper {
+    position: relative;
+
+    &::after {
+      content: "";
+      border-style: solid;
+      border-width: .4em .54em 0;
+      border-color: @c-default transparent transparent transparent;
+      position: absolute;
+      top: 24.5px;
+      right: .71em;
+      font-size: @f-l;
+      pointer-events: none;
+    }
+  }
+  select {
+    background: linear-gradient(90deg, rgba(228, 228, 228, 0.9) -6.2%, rgba(203, 203, 203, 0.9) 100%);
+    text-align: center;
+    text-align-last: center;
+    -ms-text-align-last: center;
+    -moz-text-align-last: center;
+    color: @c-default;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    cursor:pointer;
+  }
+
+  .select-invalid {
+    border: 1px solid #EE5353;
+  }
+}
+
+@media (max-width: @max-res*1px) {
+  .question3 {
+    .question {
+      width: .responsive(260, 500)[@prop];
+    }
+
+    .select-wrapper {
+      &::after {
+        font-size: .responsive(14, 20)[@prop];
+        top: .responsive(17, 24.5)[@prop];
+      }
+    }
+  }
+}
