@@ -1,1 +1,206 @@
 // main: ../style.less
+
+.last-page {
+  text-align: center;
+  color: #fff;
+
+  .container {
+    margin: 0 auto;
+    max-width: 480px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+
+  .header {
+    &__text {
+      box-sizing: border-box;
+      min-height: 84px;
+      width: 480px;
+      border-radius: .35em;
+      margin: 54px 0 36px;
+      padding: 6px 10px;
+      position: relative;
+      background-color: #fff;
+      font-size: 25px;
+      line-height: 35px;
+      color: @c-default;
+      opacity: 1;
+
+      span {
+        display: block;
+        font-weight: 700;  
+      }
+
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: -.71em;
+        right: 1.28em;
+        border-style: solid;
+        border-width: 1.2em .6em 0;
+        border-color: #fff transparent transparent;
+      }
+    }
+
+    &__text-1 {
+      padding: 20px 10px;
+    }
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .text {
+      width: 420px;
+      margin: 0 0 40px 0;
+      font-size: 25px;
+      line-height: 35px;
+      font-weight: 300;
+    }
+    .text-1 {}
+    .main-text-block {
+      width: 480px;
+      margin: 0 0 20px 0;
+      padding: 64px 50px 50px;
+      border: 1px solid #fff;
+      border-radius: 3px;
+  
+      &__text {
+        font-size: 25px;
+        line-height: 35px;
+        color: @c-primary;
+  
+        span {
+          text-transform: uppercase;
+          font-weight: 700;
+        }
+      }
+    }
+    .text-2 {}
+    .btn {
+      &::after {
+        background: linear-gradient(225deg, rgba(255, 255, 255, 0) 30.84%, rgba(255, 255, 255, 0.29) 46.06%, rgba(255, 255, 255, 0) 64.04%);
+        animation-duration: 2s;
+      }
+    }
+    .btn-call-n-listen {
+      width: 400px;
+      height: 80px;
+      background: linear-gradient(90deg, rgba(76, 217, 100, 0.9) -6.2%, rgba(50, 185, 73, 0.9) 100%);
+    }
+
+    .fetched-info {
+      display: none;
+      width: 100%;
+
+      table {
+        margin: 0 0 40px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        font-size: @f-m;
+        line-height: 25px;
+        text-align: left;
+        color: @c-primary;
+      }
+      thead {
+        text-transform: uppercase;
+
+        th:last-child {
+          color: #fff;
+        }
+      }
+      tbody {
+
+        tr {
+
+          td {
+            &:first-child {
+              padding: 0 50px 0 0;
+            }
+            
+            &:last-child {
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+ 
+  .footer {
+    font-size: 12px;
+    line-height: 18px;
+      
+    &__text {
+      letter-spacing: 3px;
+      color: @c-footer;
+    }
+  }
+}
+
+@media (max-width: 426px) {
+  .last-page {
+    .footer {
+      position: absolute;
+      bottom: -3.6em;
+    }
+  }
+}
+
+@media (max-width: @max-res*1px) {
+  .last-page {
+    .container {
+    }
+
+    .header {
+      &__text {
+        width: .responsive(260, 480)[@prop];
+        margin: .responsive(23, 54)[@prop] 0  .responsive(21, 36)[@prop];
+        font-size: .responsive(14, 25)[@prop];
+        line-height: .responsive(20, 35)[@prop];
+      }
+    }
+    .main {
+      .text {
+        width: .responsive(220, 420)[@prop];
+        margin: 0 0 .responsive(18, 40)[@prop] 0;
+        font-size: .responsive(14, 25)[@prop];
+        line-height: .responsive(16, 35)[@prop];
+      }
+      .text-1 {
+      }
+      .main-text-block {
+        width: .responsive(260, 480)[@prop];
+        margin: 0 0 .responsive(20, 36)[@prop] 0;
+        padding: .responsive(16, 64)[@prop] .responsive(15, 50)[@prop] .responsive(15, 50)[@prop];
+
+        &__text {
+          font-size: .responsive(16, 25)[@prop];
+          line-height:.responsive(25, 35)[@prop];
+        }
+      }
+      .text-2 {
+      }
+      .btn {
+        &::after {
+          width: 200%;
+        }
+      }
+      .btn-call-n-listen {
+        width: .responsive(240, 400)[@prop];
+        height: .responsive(48, 80)[@prop];
+      }
+    }
+    
+    .footer {
+      font-size: .responsive(7, 12)[@prop];
+      line-height: .responsive(9, 18)[@prop]; 
+    }
+  }
+}

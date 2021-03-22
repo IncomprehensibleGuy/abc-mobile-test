@@ -1,13 +1,17 @@
 // main: ../style.less
 
-.question {
+.question-page {
   display: flex;
   flex-direction: column;
   align-items: center;
   
   .container {
     max-width: 500px;
+    min-height: 100vh;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   hr {
@@ -24,11 +28,14 @@
 
   .header {
     position: relative;
+    min-height: 125px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 0 0 74px 0;
 
     &__text {
       box-sizing: content-box;
-      margin: 0 auto;
       padding: 48px 0 37px;
       width: 420px;
       font-family: 'Bad Script', cursive;
@@ -49,6 +56,7 @@
   .main {
     margin: 0 0 150px 0;
   }
+
   .question {
     margin: 0 0 40px 0;
     width: 500px;
@@ -60,8 +68,12 @@
   }
 
   .footer {
+    flex: 1 0 auto;
+    display: flex;
+    align-items: flex-end;
+
     &__text {
-      margin: 0 0 40px 0;
+      margin: 0 0 46px 0;
       text-align: center;
       font-size: @f-xs;
       font-weight: 300;
@@ -88,7 +100,7 @@
 
 
 @media (max-width: @max-res*1px) {
-  .question {
+  .question-page {
     .bg-img-eye {
       width: .responsive(51, 91)[@prop];
       height: .responsive(51, 91)[@prop];
@@ -110,12 +122,13 @@
     }
 
     .main {
-      margin: 0 0 .responsive(16, 150)[@prop] 0;
+      margin: 0 0 .responsive(0, 150)[@prop] 0;
     }
+
     .question {
       width: .responsive(288, 500)[@prop];
       font-size: .responsive(16, 25)[@prop];
       line-height: .responsive(20, 35)[@prop];
-    }  
+    }
   }  
 }

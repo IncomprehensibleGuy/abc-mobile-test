@@ -1,1 +1,15 @@
 // main: ../style.less
+
+.question4 {
+  .question {
+    width: 500px;
+  }
+}
+
+@media (max-width: @max-res*1px) {
+  .question4 {
+    .question {
+      width: .responsive(258, 500)[@prop];
+    }  
+  }  
+}

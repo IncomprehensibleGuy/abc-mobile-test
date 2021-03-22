@@ -1,1 +1,50 @@
 // main: ../style.less
+
+.question5 {
+  .header {
+    &__text {
+      box-sizing: border-box;
+      min-height: 84px;
+      width: 480px;
+      margin: 54px 0 36px;
+      padding: 12px 10px;
+      position: relative;
+      background-color: #fff;
+      color: @c-default;
+      border-radius: .35em;
+      opacity: 1;
+
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: -.71em;
+        right: 1.28em;
+        border-style: solid;
+        border-width: 1.2em .6em 0;
+        border-color: #fff transparent transparent;
+      }
+    }
+
+    &__text-1 {
+      padding: 20px 10px;
+    }
+  }
+}
+
+
+@media (max-width: @max-res*1px) {
+  .question5 {
+    .header {
+      &__text {
+        padding: 12px 10px;
+        margin: .responsive(23, 54)[@prop] 0  .responsive(21, 36)[@prop];
+        width: .responsive(260, 480)[@prop];
+      }
+      
+      &__text-1 {
+        padding: 20px 10px;
+      }
+    }
+  }  
+}

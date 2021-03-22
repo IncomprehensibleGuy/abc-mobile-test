@@ -1,0 +1,119 @@
+// main: ../style.less
+
+.msg-recording {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;  
+  color: #fff;
+
+  &__img {
+    width: 200px;
+    height: 95px;
+    margin: 0 0 55px 0;
+  }
+  
+  &__progress {
+    width: 340px;
+    height: 6px;
+    margin: 0 0 32px 0;
+    border-radius: 3px;
+    color: @c-primary;
+  }
+
+  /* background: */
+  &__progress::-moz-progress-bar { 
+    border-radius: 3px;
+    background: #fff; 
+  }
+  &__progress::-webkit-progress-bar { 
+    border-radius: 3px;
+    background-color: #fff; 
+  }
+  &__progress { 
+    border-radius: 3px;
+    background-color: #fff; 
+  }
+
+  /* value: */
+  &__progress::-webkit-progress-value { 
+    border-radius: 3px;
+    background-color: @c-primary; 
+  }
+  &__progress::-moz-progress-bar { 
+    border-radius: 3px;
+    background-color: @c-primary; 
+  }
+  &__progress { 
+    border-radius: 3px;
+    color: @c-primary; 
+  }
+
+  &__label {
+    letter-spacing: .1em;
+    font-weight: 300;
+    opacity: .6;
+  }
+  &__label-1 {
+    font-size: @f-xl;
+    line-height: 35px;
+    margin: 0 0 .75em 0;
+  }
+  &__label-2 {
+    font-size: @f-m;
+    line-height: 20px;
+  }
+}
+
+
+@media (max-width: @max-res*1px) {
+  
+  .msg-recording {
+    &__img {
+      width: .responsive(148, 200)[@prop];
+      height: .responsive(70, 95)[@prop];
+      margin: 0 0 .responsive(40, 55)[@prop] 0;
+    }
+    
+    &__progress {
+      width: .responsive(260, 340)[@prop];
+      height: .responsive(4, 6)[@prop];
+      margin: 0 0 .responsive(24, 32)[@prop] 0;
+      border-radius: .responsive(2, 3)[@prop];
+      color: @c-primary;
+    }
+
+    /* background: */
+    &__progress::-moz-progress-bar { 
+      border-radius: .responsive(2, 3)[@prop];
+    }
+    &__progress::-webkit-progress-bar { 
+      border-radius: .responsive(2, 3)[@prop];
+    }
+    &__progress { 
+      border-radius: .responsive(2, 3)[@prop];;
+    }
+
+    /* value: */
+    &__progress::-webkit-progress-value { 
+      border-radius: .responsive(2, 3)[@prop];
+    }
+    &__progress::-moz-progress-bar { 
+      border-radius: .responsive(2, 3)[@prop];
+    }
+    &__progress { 
+      border-radius: .responsive(2, 3)[@prop];
+    }
+
+    &__label-1 {
+      font-size: .responsive(20, 25)[@prop];
+      line-height: .responsive(24, 35)[@prop];
+    }
+    &__label-2 {
+      font-size: .responsive(12, 16)[@prop];
+      line-height: .responsive(14, 20)[@prop];
+    }
+  }
+}
